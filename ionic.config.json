@@ -1,0 +1,7 @@
+{
+  "name": "trivia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
