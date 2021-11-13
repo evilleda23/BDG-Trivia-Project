@@ -1,0 +1,52 @@
+<app-header title="Score"></app-header>
+
+
+<ion-content>
+    <div *ngIf="users || users.length>0">
+        <ion-list *ngFor="let user of users; let i = index">
+            <ion-item color="primary" *ngIf=" i == 0">
+                <ion-label>Rank</ion-label>
+                <ion-label>Nombre</ion-label>
+                <ion-label>Categoria</ion-label>
+                <ion-label>Tiempo</ion-label>
+                <ion-label>Acertadas </ion-label>
+            </ion-item>
+            <!-- export interface User { nombre: string; categoria: string; tiempo: string; asertadas: number; } -->
+
+            <ion-item>
+                <ion-label color="primary" color="primary">{{i+1}}.</ion-label>
+                <ion-label> {{user.nombre}}</ion-label>
+                <ion-label> {{user.categoria.nombre}}</ion-label>
+                <ion-label> {{tiempoU[i]}}</ion-label>
+                <ion-label> {{user.acertadas}} / 20</ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+
+
+    <div class=" center-div" *ngIf="!users || users.length === 0">
+
+        <ion-card class="card-empty ">
+            <ion-header>
+                <ion-toolbar>
+                    <ion-title>Esta un poco vacio aca</ion-title>
+                </ion-toolbar>
+
+            </ion-header>
+            <ion-card-content>
+                <ion-item>
+
+                    <ion-label class="text">Juega un par de partidas para observar tus estadisticas</ion-label>
+                </ion-item>
+
+                <ion-button class="button" routerLink="/newgame" expand="block">
+                    Nueva partida
+                </ion-button>
+
+
+            </ion-card-content>
+
+        </ion-card>
+
+    </div>
+</ion-content>

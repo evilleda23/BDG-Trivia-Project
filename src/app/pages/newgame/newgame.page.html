@@ -1,0 +1,56 @@
+<app-header title="New Game"></app-header>
+
+<ion-content class="ion-padding">
+
+
+
+
+
+    <div class="center">
+        <ion-spinner color="primary" *ngIf="waiting" name="lines"></ion-spinner>
+    </div>
+    <!-- ion picker el de escoger categoria ion- select escoger usuario-->
+    <div class="center-div" *ngIf="!startGame && !waiting">
+        <form class="form" #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
+            <ion-item-group>
+                <ion-item>
+                    <ion-label>Nombre</ion-label>
+                    <ion-input style="text-align: right;" type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.nombre" pattern="^([a-zA-Z0-9_\-\.]+)$" required></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Categoria</ion-label>
+                    <ion-select (ionChange)="getItem($event)" interface="popover" placeholder="Select One">
+                        <ion-list *ngFor="let c of categorias">
+                            <ion-select-option [value]="c.nombre">{{ c.nombre }}</ion-select-option>
+                        </ion-list>
+                    </ion-select>
+                </ion-item>
+                <ion-button class="ion-margin" [disabled]="formulario.invalid " type="submit" expand="block">
+                    continue
+                </ion-button>
+            </ion-item-group>
+        </form>
+    </div>
+    <ion-card *ngIf="startGame">
+        <ion-card-content>
+            <ion-item>
+                <ion-label>Timer</ion-label>
+                <ion-item slot="end">
+                    <ion-icon name="time"></ion-icon>
+                    <ion-label slot="end">{{timer}}</ion-label>
+                </ion-item>
+
+            </ion-item>
+            <ion-item>
+                <ion-label>Acertadas</ion-label>
+                <ion-item slot="end">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <ion-label slot="end">{{user.acertadas}}/20 </ion-label>
+                </ion-item>
+
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <app-pregunta *ngIf="startGame && idPregunta!=20" [pregunta]="preguntas[idPregunta] " [respuestas]="respuestas" (nextQ)="nextQuestion()" (acertada)="isCorrect()"></app-pregunta>
+
+</ion-content>

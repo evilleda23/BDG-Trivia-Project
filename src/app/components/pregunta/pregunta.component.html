@@ -1,0 +1,33 @@
+<ion-content>
+    <div class="center-card">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle>{{pregunta.category}}</ion-card-subtitle>
+                <!-- <ion-item>
+                    <ion-item slot="end">
+                        <ion-icon name="timer-outline"></ion-icon>
+                        <p></p>
+
+                    </ion-item>
+                </ion-item> -->
+
+                <ion-card-title>{{pregunta.question}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-list *ngFor="let resp of respuestas">
+
+                    <ion-button (click)="onClick(resp)" expand="block">
+                        {{resp}}
+                    </ion-button>
+
+                </ion-list>
+
+
+            </ion-card-content>
+
+
+        </ion-card>
+
+    </div>
+
+</ion-content>

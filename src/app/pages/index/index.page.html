@@ -1,0 +1,20 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title class="ion-text-center" capitalize>Index</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+
+    <div class="center-div">
+
+        <ion-img class="img" src="../../../assets/img/logo2.png"></ion-img>
+        <ion-item-group *ngFor="let c of componentes" class="buttons">
+            <ion-button [routerLink]="c.redirectTo" class="button " expand="block" fill="solid">
+                <ion-icon slot="start" [name]="c.icon"></ion-icon>
+                {{c.name}}
+            </ion-button>
+        </ion-item-group>
+    </div>
+
+</ion-content>

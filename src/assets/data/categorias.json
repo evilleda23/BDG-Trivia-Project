@@ -1,0 +1,31 @@
+[{
+    "nombre": "Food and Drink",
+    "url": "food_and_drink"
+}, {
+    "nombre": "Geografia",
+    "url": "geography"
+}, {
+    "nombre": "General Knoledge",
+    "url": "general_knowledge"
+}, {
+    "nombre": "Historia",
+    "url": "history"
+}, {
+    "nombre": "Arte y Literatura",
+    "url": "literature"
+}, {
+    "nombre": "Peliculas",
+    "url": "movies"
+}, {
+    "nombre": "Musica",
+    "url": "music"
+}, {
+    "nombre": "Ciencia",
+    "url": "science"
+}, {
+    "nombre": "Cultura",
+    "url": "society_and_culture"
+}, {
+    "nombre": "Deportes",
+    "url": "sport_and_leisure"
+}]
